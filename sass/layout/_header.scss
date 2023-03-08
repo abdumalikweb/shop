@@ -1,0 +1,249 @@
+header {
+  padding: 15px 0;
+  background: #fff;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+  nav {
+   
+    @include display-flex;
+    .header_left {
+      width: 60%;
+
+      @include display-flex;
+      flex-wrap: nowrap;
+      img {
+        // width: 20%;
+      }
+      .img_res {
+        display: none;
+      }
+      button {
+        a {
+          color: $btn-text-color;
+        }
+        @include btn;
+        padding: 0.7em;
+        &:hover {
+          background: $btn-hover;
+        }
+      }
+      input {
+        @include input;
+      }
+    }
+    .header_right {
+      padding-left: 1.9rem;
+      width: 39%;
+      @include display-flex;
+      .imag {
+        width: 100%;
+      }
+      button {
+        cursor: pointer;
+        p {
+          padding-left: 0.8rem;
+          font-weight: 500;
+        }
+        @include display-flex;
+        @include accaunt;
+      }
+    }
+  }
+  .drapdawn {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+    z-index: 900;
+    display: none;
+    transition: opacity 0.5s ease;
+
+    .main {
+      @include display-flex;
+      padding-top: 3rem;
+      li {
+        padding: 12px 20px;
+        a {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 150%;
+          color: #414141;
+          &:hover {
+            color: #ff6633;
+          }
+        }
+      }
+    }
+    &.active {
+      display: block;
+    }
+  }
+
+  // modal
+  #login_modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(252, 213, 186, 0.8);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // opacity: 0;
+    display: none;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    &.active {
+      // opacity: 1;
+      display: inline-block;
+      pointer-events: all;
+    }
+    .modal {
+      
+      margin:30vh auto ;
+      background: #fff;
+      padding: 10px 0px 20px 0px;
+      border-radius: 0.3rem;
+      width: 33%;
+      text-align: center;
+      @media screen and(max-width:700px) {
+        .modal {
+          width: 100%;
+        }
+      }
+      .top_form {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        .close_modal {
+          cursor: pointer;
+        }
+      }
+      .login_form {
+        h2 {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 150%;
+          text-align: center;
+          color: #414141;
+          padding: 0.6rem 0rem;
+        }
+        form {
+          .input {
+            outline: none;
+            padding: 0.9rem;
+            width: 90%;
+            background: #ffffff;
+            border: 1px solid #70c05b;
+            box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+            border-radius: 4px;
+          }
+          .input_btn {
+            margin-top: 20px;
+            width: 90%;
+            background: #fcd5ba;
+            border-radius: 4px;
+            border: none;
+            color: #ff6633;
+            padding: 1rem;
+            &:hover {
+              background: #fae1cf;
+            }
+          }
+        }
+        .link {
+          display: flex;
+          justify-content: space-between;
+          padding: 1.7rem;
+          align-items: center;
+          a {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            &:hover {
+              color: #70c05b;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cart {
+    display: block;
+    text-align: center;
+    background: red;
+    color: #fff;
+    border-radius: 10px;
+  }
+
+  /////responsible
+  @media screen and (max-width: 1080px) {
+    nav {
+      .header_left {
+        .img_res {
+          display: block;
+        }
+        .logo {
+          display: none;
+        }
+      }
+      .header_right {
+        button {
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 700px) {
+    nav {
+      .header_left {
+        width: 100%;
+        button {
+          display: none;
+        }
+        input {
+          width: 80%;
+        }
+      }
+      .header_right {
+        background: #fff;
+        width: 100%;
+        position: fixed;
+        top: 100;
+        bottom: 0;
+        left: 0;
+        padding: 0px 20px;
+        z-index: 9000;
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    nav {
+      .header_left {
+        flex-wrap: nowrap;
+
+        .img_res {
+          display: none;
+        }
+        input {
+          width: 100%;
+        }
+      }
+      .header_right {
+        img {
+        }
+      }
+    }
+  }
+}

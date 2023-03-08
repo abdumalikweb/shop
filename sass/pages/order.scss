@@ -1,0 +1,129 @@
+@import "../global";
+
+main {
+  padding-bottom: 100px;
+  // height: 100vh;
+  background: rgb(251, 248, 236);
+  #filter {
+    .link {
+      padding: 25px 0;
+      a {
+        color: black;
+      }
+    }
+    .order-list {
+      @include display-flex;
+      justify-content: left;
+      gap: 20px;
+      flex-wrap: wrap;
+      .card_item {
+        width: 23%;
+        border-radius: 5px;
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+        background: #fff;
+        padding-bottom: 10px;
+        .card_head {
+          position: relative;
+          .discount {
+            position: absolute;
+            // top: ;
+            bottom: 0;
+            left: 0;
+            background: rgb(146, 2, 2);
+            color: #fff;
+          }
+          .like {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 20pt;
+            cursor: pointer;
+            color: grey;
+            &:hover {
+              color: red;
+            }
+          }
+        }
+
+        img {
+          padding: 5px;
+          width: 100%;
+        }
+        .price {
+          padding: 10px 0;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 150%;
+          color: #414141;
+          display: flex;
+          justify-content: space-between;
+          del {
+            color: rgb(146, 2, 2);
+          }
+        }
+        .description {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: #414141;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .rating {
+          display: flex;
+          justify-content: space-between;
+          // align-items: stretch;
+          width: 70%;
+          // height: 100px;
+          img {
+            width: 20%;
+            height: 65px;
+          }
+        }
+        button {
+          width: 100%;
+          background: #fff;
+          border: 1px solid #70c05b;
+          color: #70c05b;
+          border-radius: 4px;
+          padding: 9px;
+
+          p {
+            margin: 0 auto;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            text-align: center;
+          }
+          &:hover {
+            // border: 1px solid #ff6633;
+            background: #ff6633;
+            color: #ffffff;
+            // border: #ff6633;
+          }
+        }
+      }
+      @media screen and(max-width:1000px) {
+        .card_item {
+          width: 30%;
+        }
+      }
+      @media screen and(max-width:700px) {
+        .card_item {
+          width: 48%;
+        }
+      }
+      @media screen and(max-width:550px) {
+        .card_item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

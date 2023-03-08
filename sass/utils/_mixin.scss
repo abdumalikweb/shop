@@ -1,0 +1,33 @@
+@mixin display-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin btn {
+  background: $btn-color;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+@mixin accaunt {
+  border: none;
+  background: none;
+}
+@mixin input {
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid $btn-color;
+  padding: 0.6rem;
+  width: 60%;
+}
+@mixin title_text {
+  padding: 40px 0;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #414141;
+}
